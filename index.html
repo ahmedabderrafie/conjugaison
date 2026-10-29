@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conjugueur français de référence : recherchez un verbe et obtenez tous les modes et temps (indicatif, subjonctif, conditionnel, impératif, participe, gérondif).">
+  <title>Conjugaison française — Le conjugueur de référence</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- ============ Barre latérale ============ -->
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" id="brandHome" href="#" title="Retour à l'accueil">
+        <span class="flag"><i class="b"></i><i class="w"></i><i class="r"></i></span>
+        <div>
+          <h1>Conjugaison</h1>
+          <span>Le conjugueur français</span>
+        </div>
+      </a>
+
+      <div class="search-wrap">
+        <div class="search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input id="search" type="search" placeholder="Rechercher un verbe…" autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+
+      <div class="filters" id="filters"></div>
+      <nav class="verb-list" id="verbList" aria-label="Liste des verbes"></nav>
+    </aside>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- ============ Contenu ============ -->
+    <div class="content">
+      <div class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
+        <a class="home-logo" id="homeLogo" href="#" title="Retour à l'accueil" aria-label="Accueil">
+          <span class="flag"><i class="b"></i><i class="w"></i><i class="r"></i></span>
+          <strong>Conjugaison</strong>
+        </a>
+        <span class="tri" aria-hidden="true"></span>
+        <button class="icon-btn" id="quizBtn" title="Mode entraînement">✎ Entraînement</button>
+        <button class="icon-btn" id="randomBtn" title="Verbe au hasard">🎲 Aléatoire</button>
+        <button class="icon-btn" id="themeBtn" title="Basculer le thème" aria-label="Thème">☾</button>
+      </div>
+
+      <div class="main-scroll">
+        <div id="main"></div>
+        <footer>
+          Conjugueur français — modes et temps standard. Les temps littéraires
+          (passé simple, passé antérieur, subjonctif imparfait et plus-que-parfait)
+          restent surtout employés à l'écrit soutenu.
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Modale d'entraînement ============ -->
+  <div class="modal-backdrop" id="quizModal" hidden>
+    <div class="quiz" id="quizBox" role="dialog" aria-modal="true" aria-label="Entraînement à la conjugaison"></div>
+  </div>
+
+  <script src="js/verbs-data.js"></script>
+  <script src="js/conjugator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
